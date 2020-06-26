@@ -1,0 +1,20 @@
+{
+    "name": "Easy Links",
+    "manifest_version": 2,
+    "description": "I'm too lazy to copy my links every time, so I created this to help me",
+    "version": "0.0.2",
+    "icons": {"128":"iconSimplified.ico"},
+    "browser_action": {
+        "default_icon": "iconSimplified.ico",
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab","storage","declarativeContent"],
+    "content_scripts":[{
+        "matches": ["<all_urls>"],
+        "js": ["popup.js"]
+    }],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
